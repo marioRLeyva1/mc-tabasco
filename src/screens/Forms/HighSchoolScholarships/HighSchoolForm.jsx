@@ -12,6 +12,7 @@ export const HighSchoolForm = () => {
   const [results, setResults] = React.useState({});
   const [modal, setModal] = React.useState({title: '', message: '', open: 'hidden', button: ''});
   
+  
   const onChangeData = (e) => {
     const key = e.target.id;
     if(key === 'birthDate'){
@@ -46,7 +47,7 @@ export const HighSchoolForm = () => {
 
   const onCloseModal = () => {
     setModal({title: '', message: 'T', open: 'hidden'});
-    window.location.reload();
+    window.location.replace('https://movimientociudadano.mx/tabasco');
   }
 
   return (

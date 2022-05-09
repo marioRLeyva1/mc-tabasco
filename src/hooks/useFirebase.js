@@ -1,23 +1,16 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore"
+import { firebaseConfig } from "../firebase.config";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBdyZkJcktsGqX7XsDbNNbKiKMiDKNA0hk",
-  authDomain: "formulario-becas.firebaseapp.com",
-  projectId: "formulario-becas",
-  storageBucket: "formulario-becas.appspot.com",
-  messagingSenderId: "861818739671",
-  appId: "1:861818739671:web:45bda31cbf72df809c4992",
-  measurementId: "G-M49SWMFXEP"
-};
+const firebaseConfigs = firebaseConfig;
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfigs);
 
 const db = getFirestore(app);
 
