@@ -33,6 +33,14 @@ export const state = {
         answer: undefined
       },
       {
+        key: 'mode',
+        question: 'Modalidad*',
+        required: true,
+        options: ['Presencial', 'En línea o remoto'],
+        type: 'text',
+        answer: undefined
+      },
+      {
         key: 'address',
         question: 'Dirección*',
         required: true,
@@ -42,10 +50,18 @@ export const state = {
       },
       {
         key: 'city',
-        question: 'Municipio*',
+        question: 'Municipio o Localidad*',
         required: true,
-        options: ['Balancán', 'Cárdenas', 'Centla', 'Centro', 'Comalcalco', 'Cunduacán', 'Emiliano Zapata', 'Huimanguillo', 'Jalapa', 'Jalpa de Méndez', 'Jonuta', 'Macuspana', 'Nacajuca', 'Paraíso', 'Tacotalpa', 'Teapa', 'Tenosique'],
-        type: null,
+        options: null,
+        type: 'text',
+        answer: undefined
+      },
+      {
+        key: 'state',
+        question: 'Estado*',
+        required: true,
+        options: ['Aguascalientes','Baja California','Baja California Sur','Campeche','Chiapas','Chihuahua','Coahuila de Zaragoza','Colima','Ciudad de México','Durango','Guanajuato','Guerrero','Hidalgo','Jalisco','Estado de Mexico','Michoacan de Ocampo','Morelos','Nayarit','Nuevo Leon','Oaxaca','Puebla','Queretaro de Arteaga','Quintana Roo','San Luis Potosi','Sinaloa','Sonora','Tabasco','Tamaulipas','Tlaxcala','Veracruz de Ignacio de la Llave','Yucatan','Zacatecas'],
+        type: 'text',
         answer: undefined
       },
       {

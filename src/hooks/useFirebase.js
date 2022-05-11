@@ -16,6 +16,7 @@ const db = getFirestore(app);
 
 export async function readData() {
     const querySnapshot = await getDocs(collection(db, "beca_bachillerato"));
+    console.log(querySnapshot);
     querySnapshot.forEach((doc) => console.log(doc.data()))
 }
 

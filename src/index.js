@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HighSchoolForm } from './screens/Forms/HighSchoolScholarships/HighSchoolForm';
+import Results from './screens/Internal/Results/Results';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
       <Routes>
         <Route path='/' element={<HighSchoolForm/>}/>
         <Route path='/becas-bachiller' element={<HighSchoolForm/>}/>
+        <Route path='/resultados' element={<Results/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

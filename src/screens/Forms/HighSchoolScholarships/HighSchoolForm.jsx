@@ -54,7 +54,7 @@ export const HighSchoolForm = () => {
     <div>
       <Modal open={modal.open} button={modal.button} title={modal.title} message={modal.message} onClick={() => onCloseModal()}></Modal>
       <Header></Header>
-      <div className='lg:bg-orange-300 lg:flex lg:flex-col lg:items-center lg:w-screen lg:h-screen'>
+      <div className='lg:bg-orange-300 lg:flex lg:flex-col lg:items-center lg:w-full lg:h-full'>
         <div className='lg:w-2/5 lg:bg-white shadow-lg max-w-2xl'>
           <h1 className='font-poppins flex flex-col justify-center items-center mt-4 text-xl lg:text-2xl'>
             Inscríbete al programa de becas
