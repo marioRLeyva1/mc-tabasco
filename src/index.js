@@ -12,8 +12,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<HighSchoolForm/>}/>
-        <Route path='/becas-bachiller' element={<HighSchoolForm/>}/>
-        <Route path='/resultados' element={<Results/>}/>
+        <Route path='/forms/becas-bachiller' element={<HighSchoolForm/>}/>
+        <Route path='/interno/resultados' element={<Results/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
