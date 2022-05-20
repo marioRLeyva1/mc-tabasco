@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import GridTableResults from '../../../components/GridTable/GridTable';
 import { readData } from '../../../hooks/useFirebase'
 import { state } from './ResultsState';
@@ -10,11 +10,15 @@ const ExcelColumn = ReactExport.ExcelFile.ExcelColumn;
 
 const Results = () => {
     const [rows, setRows] = React.useState([]);
-    const [colums, setColums] = React.useState(state.colums);
+    const colums = state.colums;
     const [password, setPassword] = React.useState('');
     const [passwordCorrect, setPasswordCorrect] = React.useState(false);
     const [loading, setLoading] = React.useState(false);
-    const [excel, setExcel] = React.useState(false);
+
+    useEffect((() => {
+        if (!localStorage.getItem('password')) localStorage.setItem('password', 'incorrect');
+        if (localStorage.getItem('password') === 'correct') getData();
+    }),[])
 
     const getData = async () => {
         setLoading(true);
@@ -26,11 +30,12 @@ const Results = () => {
 
     const validatePassowrd = () => {
         password === 'movctab' ? getData() : console.log('password incorrecta');
+        localStorage.password = 'correct'
     };
 
-    const exportExcel = () => {
-        setExcel(true);
-        console.log(excel);
+    const updateData = () => {
+        setRows([]);
+        getData();
     }
 
     return (
@@ -62,6 +67,7 @@ const Results = () => {
                                 <ExcelColumn label='Comentario' value='comment'/>
                             </ExcelSheet>
                         </ExcelFile>
+                    <button className={`ml-6 bg-orange-500 w-32 h-10 rounded-lg shadow-lg mt-6 mb-7 hover:scale-105 hover:transition pointer active:scale-95 active:transition-all text-white font-semibold`} onClick={() => updateData()}>Actualizar</button>
                     </div>
                     <br></br>
                     <GridTableResults rows={rows} colums={colums} isLoading={loading} />
